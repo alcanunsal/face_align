@@ -6,7 +6,7 @@ import os
 import os.path as osp
 import cv2
 from insightface.model_zoo import model_zoo
-import .face_align
+from .face_aligner import estimate_norm
 
 __all__ = ['Face_detect_crop', 'Face']
 
@@ -74,7 +74,7 @@ class Face_detect_crop:
             kps = None
             if kpss is not None:
                 kps = kpss[i]
-            M, _ = face_align.estimate_norm(kps, crop_size, mode=self.mode)
+            M, _ = estimate_norm(kps, crop_size, mode=self.mode)
             align_img = cv2.warpAffine(
                 img, M, (crop_size, crop_size), borderValue=0.0)
             align_img_list.append(align_img)
