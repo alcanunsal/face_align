@@ -6,7 +6,7 @@ import os
 import os.path as osp
 import cv2
 from insightface.model_zoo import model_zoo
-import face_align
+import .face_align
 
 __all__ = ['Face_detect_crop', 'Face']
 
