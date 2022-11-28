@@ -5,8 +5,6 @@ import cv2
 
 import numpy as np
 
-from .model import Face_detect_crop
-
 
 
 
